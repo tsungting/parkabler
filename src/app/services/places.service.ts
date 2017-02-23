@@ -4,7 +4,7 @@ import { Http, Response, URLSearchParams } from '@angular/http';
 import { Observable } from 'rxjs';
 import { Position, Place, PlaceCollection } from '~/util';
 
-Injectable();
+@Injectable()
 export class PlacesService {
 
     private mapboxAccessTolken = MapboxAccessTolken;
@@ -13,7 +13,7 @@ export class PlacesService {
     // TODO-rangle: Why do I have to inject http explicitly?
     // The httpmodule is included in app.module
     constructor(
-        @Inject(Http) public http: Http
+        private http: Http
     ) {}
 
     // Returns a featureCollection of possible points to resolve to

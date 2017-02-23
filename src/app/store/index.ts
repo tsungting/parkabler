@@ -1,5 +1,5 @@
 const createLogger = require('redux-logger');
-const persistState = ('redux-localstorage');
+const persistState = require('redux-localstorage');
 
 import { IAppState, rootReducer } from './store';
 
@@ -9,7 +9,7 @@ export {
 };
 
 export let middleware = [];
-export let enhancers = [];
+export let enhancers = [persistState()];
   // store state offline
   // persistState('spots', {key: 'parkabler/app/state'});
 
